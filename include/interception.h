@@ -157,7 +157,7 @@ typedef struct
     unsigned int information;
 } InterceptionKeyboardStroke;
 
-typedef InterceptionMouseStroke InterceptionStroke;
+typedef char InterceptionStroke[sizeof(InterceptionMouseStroke)];
 
 InterceptionContext ITERCEPTION_API interception_create_context(void);
 

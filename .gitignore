@@ -4,6 +4,7 @@ Thumbs.db
 *.exe
 *.sys
 *.pdb
+*.idb
 *.sdf
 *.opensdf
 *.user
@@ -30,4 +31,6 @@ Thumbs.db
 ipch/
 objchk_*/
 objfre_*/
+[Dd]ebug/
+[Rr]elease/
 build/
