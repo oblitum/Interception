@@ -109,25 +109,25 @@ void interception_destroy_context(InterceptionContext context)
     HeapFree(GetProcessHeap(), 0, context);
 }
 
-InterceptionFilterPrecedence interception_get_precedence(InterceptionContext context, InterceptionDevice device)
+InterceptionPrecedence interception_get_precedence(InterceptionContext context, InterceptionDevice device)
 {
     InterceptionDeviceArray device_array = (InterceptionDeviceArray)context;
-    InterceptionFilterPrecedence precedence = 0;
+    InterceptionPrecedence precedence = 0;
     DWORD bytes_returned;
 
     if(context)
-        DeviceIoControl(device_array[device - 1].handle, IOCTL_GET_PRECEDENCE, NULL, 0, (LPVOID)&precedence, sizeof(InterceptionFilterPrecedence), &bytes_returned, NULL);
+        DeviceIoControl(device_array[device - 1].handle, IOCTL_GET_PRECEDENCE, NULL, 0, (LPVOID)&precedence, sizeof(InterceptionPrecedence), &bytes_returned, NULL);
 
     return precedence;
 }
 
-void interception_set_precedence(InterceptionContext context, InterceptionDevice device, InterceptionFilterPrecedence precedence)
+void interception_set_precedence(InterceptionContext context, InterceptionDevice device, InterceptionPrecedence precedence)
 {
     InterceptionDeviceArray device_array = (InterceptionDeviceArray)context;
     DWORD bytes_returned;
 
     if(context)
-        DeviceIoControl(device_array[device - 1].handle, IOCTL_SET_PRECEDENCE, (LPVOID)&precedence, sizeof(InterceptionFilterPrecedence), NULL, 0, &bytes_returned, NULL);
+        DeviceIoControl(device_array[device - 1].handle, IOCTL_SET_PRECEDENCE, (LPVOID)&precedence, sizeof(InterceptionPrecedence), NULL, 0, &bytes_returned, NULL);
 }
 
 InterceptionFilter interception_get_filter(InterceptionContext context, InterceptionDevice device)

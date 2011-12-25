@@ -45,7 +45,7 @@ typedef void *InterceptionContext;
 
 typedef int InterceptionDevice;
 
-typedef int InterceptionFilterPrecedence;
+typedef int InterceptionPrecedence;
 
 typedef unsigned short InterceptionFilter;
 
@@ -163,9 +163,9 @@ InterceptionContext ITERCEPTION_API interception_create_context(void);
 
 void ITERCEPTION_API interception_destroy_context(InterceptionContext context);
 
-InterceptionFilterPrecedence ITERCEPTION_API interception_get_precedence(InterceptionContext context, InterceptionDevice device);
+InterceptionPrecedence ITERCEPTION_API interception_get_precedence(InterceptionContext context, InterceptionDevice device);
 
-void ITERCEPTION_API interception_set_precedence(InterceptionContext context, InterceptionDevice device, InterceptionFilterPrecedence precedence);
+void ITERCEPTION_API interception_set_precedence(InterceptionContext context, InterceptionDevice device, InterceptionPrecedence precedence);
 
 InterceptionFilter ITERCEPTION_API interception_get_filter(InterceptionContext context, InterceptionDevice device);
 
