@@ -12,7 +12,7 @@ int main()
 {
     InterceptionContext context;
     InterceptionDevice device;
-    InterceptionKeyboardStroke stroke;
+    InterceptionKeyStroke stroke;
     
     raise_process_priority();
     
