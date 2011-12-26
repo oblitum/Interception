@@ -192,13 +192,13 @@ int interception_send(InterceptionContext context, InterceptionDevice device, co
 
         for(i = 0; i < nstroke; ++i)
         {
-            InterceptionKeyboardStroke *keyboard_stroke = (InterceptionKeyboardStroke *) stroke;
+            InterceptionKeyStroke *key_stroke = (InterceptionKeyStroke *) stroke;
             
             rawstrokes[i].UnitId = 0;
-            rawstrokes[i].MakeCode = keyboard_stroke[i].code;
-            rawstrokes[i].Flags = keyboard_stroke[i].state;
+            rawstrokes[i].MakeCode = key_stroke[i].code;
+            rawstrokes[i].Flags = key_stroke[i].state;
             rawstrokes[i].Reserved = 0;
-            rawstrokes[i].ExtraInformation = keyboard_stroke[i].information;
+            rawstrokes[i].ExtraInformation = key_stroke[i].information;
         }
 
         DeviceIoControl(device_array[device - 1].handle, IOCTL_WRITE, rawstrokes,(DWORD)nstroke * sizeof(KEYBOARD_INPUT_DATA), NULL, 0, &strokeswritten, NULL);
@@ -258,11 +258,11 @@ int interception_receive(InterceptionContext context, InterceptionDevice device,
 
         for(i = 0; i < (unsigned int)strokesread; ++i)
         {
-            InterceptionKeyboardStroke *keyboard_stroke = (InterceptionKeyboardStroke *) stroke;
+            InterceptionKeyStroke *key_stroke = (InterceptionKeyStroke *) stroke;
             
-            keyboard_stroke[i].code = rawstrokes[i].MakeCode;
-            keyboard_stroke[i].state = rawstrokes[i].Flags;
-            keyboard_stroke[i].information = rawstrokes[i].ExtraInformation;
+            key_stroke[i].code = rawstrokes[i].MakeCode;
+            key_stroke[i].state = rawstrokes[i].Flags;
+            key_stroke[i].information = rawstrokes[i].ExtraInformation;
         }
 
         HeapFree(GetProcessHeap(), 0,  rawstrokes);

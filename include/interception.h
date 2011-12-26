@@ -155,7 +155,7 @@ typedef struct
     unsigned short code;
     unsigned short state;
     unsigned int information;
-} InterceptionKeyboardStroke;
+} InterceptionKeyStroke;
 
 typedef char InterceptionStroke[sizeof(InterceptionMouseStroke)];
 
