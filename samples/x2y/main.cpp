@@ -18,7 +18,7 @@ int main()
     
     context = interception_create_context();
     
-    interception_set_filter(context, interception_is_keyboard, INTERCEPTION_KEY_FILTER_DOWN | INTERCEPTION_KEY_FILTER_UP);
+    interception_set_filter(context, interception_is_keyboard, INTERCEPTION_FILTER_KEY_DOWN | INTERCEPTION_FILTER_KEY_UP);
 
     while(interception_receive(context, device = interception_wait(context), (InterceptionStroke *)&stroke, 1) > 0)
     {
