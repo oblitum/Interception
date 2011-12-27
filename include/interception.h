@@ -51,7 +51,7 @@ typedef unsigned short InterceptionFilter;
 
 typedef int (*InterceptionPredicate)(InterceptionDevice device);
 
-enum InterceptionKeyFlags
+enum InterceptionKeyState
 {
     INTERCEPTION_KEY_DOWN             = 0x00,
     INTERCEPTION_KEY_UP               = 0x01,
@@ -62,7 +62,7 @@ enum InterceptionKeyFlags
     INTERCEPTION_KEY_TERMSRV_VKPACKET = 0x20
 };
 
-enum InterceptionFilterKeyFlags
+enum InterceptionFilterKeyState
 {
     INTERCEPTION_FILTER_KEY_NONE             = 0x0000,
     INTERCEPTION_FILTER_KEY_ALL              = 0xFFFF,
@@ -75,7 +75,7 @@ enum InterceptionFilterKeyFlags
     INTERCEPTION_FILTER_KEY_TERMSRV_VKPACKET = INTERCEPTION_KEY_TERMSRV_VKPACKET << 1
 };
 
-enum InterceptionMouseButtonFlags
+enum InterceptionMouseState
 {
     INTERCEPTION_MOUSE_LEFT_BUTTON_DOWN   = 0x001,
     INTERCEPTION_MOUSE_LEFT_BUTTON_UP     = 0x002,
@@ -100,7 +100,7 @@ enum InterceptionMouseButtonFlags
     INTERCEPTION_MOUSE_HWHEEL             = 0x800
 };
 
-enum InterceptionFilterMouseFlags
+enum InterceptionFilterMouseState
 {
     INTERCEPTION_FILTER_MOUSE_NONE               = 0x0000,
     INTERCEPTION_FILTER_MOUSE_ALL                = 0xFFFF,
@@ -130,7 +130,7 @@ enum InterceptionFilterMouseFlags
     INTERCEPTION_FILTER_MOUSE_MOVE               = 0x1000
 };
 
-enum InterceptionMouseFlags
+enum InterceptionMouseFlag
 {
     INTERCEPTION_MOUSE_MOVE_RELATIVE      = 0x000,
     INTERCEPTION_MOUSE_MOVE_ABSOLUTE      = 0x001,
