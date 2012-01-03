@@ -11,7 +11,6 @@ int main()
     InterceptionContext context;
     InterceptionDevice device;
     InterceptionStroke stroke;
-    int last = -1;
     
     raise_process_priority();
     
