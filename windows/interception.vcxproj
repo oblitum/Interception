@@ -164,56 +164,56 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='dynamic debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\x86\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\bin\x86\debug\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='dynamic debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\x64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\bin\x64\debug\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='dynamic debug|Itanium'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\ia64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\bin\ia64\debug\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='dynamic release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\x86\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\bin\x86\release\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='dynamic release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\x64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\bin\x64\release\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='dynamic release|Itanium'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\ia64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\bin\ia64\release\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static debug|x64'">
-    <OutDir>$(ProjectDir)..\lib\x64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\lib\x64\debug\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static debug|Itanium'">
-    <OutDir>$(ProjectDir)..\lib\ia64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\lib\ia64\debug\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static release|x64'">
-    <OutDir>$(ProjectDir)..\lib\x64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\lib\x64\release\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static release|Itanium'">
-    <OutDir>$(ProjectDir)..\lib\ia64\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\lib\ia64\release\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static debug|Win32'">
-    <OutDir>$(ProjectDir)..\lib\x86\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\lib\x86\debug\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static release|Win32'">
-    <OutDir>$(ProjectDir)..\lib\x86\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)..\lib\x86\release\</OutDir>
     <IntDir>$(ProjectDir)build\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='static debug|Win32'">
