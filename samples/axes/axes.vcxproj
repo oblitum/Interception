@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E8EF031C-336B-4F58-A88A-954421DF3236}</ProjectGuid>
+    <ProjectGuid>{215FB8BB-6069-436E-B7C3-24193861129B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>x2y</RootNamespace>
+    <RootNamespace>axes</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
