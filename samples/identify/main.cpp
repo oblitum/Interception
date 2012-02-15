@@ -27,14 +27,14 @@ int main()
     {
         if(interception_is_keyboard(device))
         {
-            InterceptionKeyStroke keystroke = *(InterceptionKeyStroke *) &stroke;
+            InterceptionKeyStroke &keystroke = *(InterceptionKeyStroke *) &stroke;
             
             if(keystroke.code == SCANCODE_ESC) break;
         }
 
         if(interception_is_mouse(device))
         {
-            InterceptionMouseStroke mousestroke = *(InterceptionMouseStroke *) &stroke;
+            InterceptionMouseStroke &mousestroke = *(InterceptionMouseStroke *) &stroke;
 
             cout << "INTERCEPTION(" << device - INTERCEPTION_MOUSE(0) << ")" << endl;
         }
