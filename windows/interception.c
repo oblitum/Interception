@@ -10,6 +10,7 @@
 #define IOCTL_SET_EVENT         CTL_CODE(FILE_DEVICE_UNKNOWN, 0x810, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_WRITE             CTL_CODE(FILE_DEVICE_UNKNOWN, 0x820, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_READ              CTL_CODE(FILE_DEVICE_UNKNOWN, 0x840, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_GET_HARDWARE_ID   CTL_CODE(FILE_DEVICE_UNKNOWN, 0x880, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 typedef struct _KEYBOARD_INPUT_DATA
 {
@@ -294,6 +295,18 @@ int interception_receive(InterceptionContext context, InterceptionDevice device,
     }
 
     return strokesread;
+}
+
+unsigned int interception_get_hardware_id(InterceptionContext context, InterceptionDevice device, void *hardware_id_buffer, unsigned int buffer_size)
+{
+    InterceptionDeviceArray device_array = (InterceptionDeviceArray)context;
+    DWORD output_size = 0;
+
+    if(context == 0 || interception_is_invalid(device)) return 0;
+    
+    DeviceIoControl(device_array[device - 1].handle, IOCTL_GET_HARDWARE_ID, NULL, 0, hardware_id_buffer, buffer_size, &output_size, NULL);
+
+    return output_size;
 }
 
 int interception_is_invalid(InterceptionDevice device)

@@ -179,6 +179,8 @@ int ITERCEPTION_API interception_send(InterceptionContext context, InterceptionD
 
 int ITERCEPTION_API interception_receive(InterceptionContext context, InterceptionDevice device, InterceptionStroke *stroke, unsigned int nstroke);
 
+unsigned int ITERCEPTION_API interception_get_hardware_id(InterceptionContext context, InterceptionDevice device, void *hardware_id_buffer, unsigned int buffer_size);
+
 int ITERCEPTION_API interception_is_invalid(InterceptionDevice device);
 
 int ITERCEPTION_API interception_is_keyboard(InterceptionDevice device);
