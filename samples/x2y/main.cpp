@@ -24,7 +24,7 @@ int main()
     {
         if(stroke.code == SCANCODE_X) stroke.code = SCANCODE_Y;
 
-        interception_send(context, device, (const InterceptionStroke *)&stroke, 1);
+        interception_send(context, device, (InterceptionStroke *)&stroke, 1);
 
         if(stroke.code == SCANCODE_ESC) break;
     }

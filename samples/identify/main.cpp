@@ -36,7 +36,7 @@ int main()
         {
             InterceptionMouseStroke &mousestroke = *(InterceptionMouseStroke *) &stroke;
 
-            cout << "INTERCEPTION(" << device - INTERCEPTION_MOUSE(0) << ")" << endl;
+            cout << "INTERCEPTION_MOUSE(" << device - INTERCEPTION_MOUSE(0) << ")" << endl;
         }
         
         interception_send(context, device, &stroke, 1);
