@@ -1,28 +1,28 @@
-#ifndef _ITERCEPTION_H_
-#define _ITERCEPTION_H_
+#ifndef _INTERCEPTION_H_
+#define _INTERCEPTION_H_
 
 #ifdef INTERCEPTION_STATIC
-    #define ITERCEPTION_API
+    #define INTERCEPTION_API
 #else
     #if defined _WIN32 || defined __CYGWIN__
         #ifdef INTERCEPTION_EXPORT
             #ifdef __GNUC__
-                #define ITERCEPTION_API __attribute__((dllexport))
+                #define INTERCEPTION_API __attribute__((dllexport))
             #else
-                #define ITERCEPTION_API __declspec(dllexport)
+                #define INTERCEPTION_API __declspec(dllexport)
             #endif
         #else
             #ifdef __GNUC__
-                #define ITERCEPTION_API __attribute__((dllimport))
+                #define INTERCEPTION_API __attribute__((dllimport))
             #else
-                #define ITERCEPTION_API __declspec(dllimport)
+                #define INTERCEPTION_API __declspec(dllimport)
             #endif
         #endif
     #else
         #if __GNUC__ >= 4
-            #define ITERCEPTION_API __attribute__ ((visibility("default")))
+            #define INTERCEPTION_API __attribute__ ((visibility("default")))
         #else
-            #define ITERCEPTION_API
+            #define INTERCEPTION_API
         #endif
     #endif
 #endif
@@ -159,33 +159,33 @@ typedef struct
 
 typedef char InterceptionStroke[sizeof(InterceptionMouseStroke)];
 
-InterceptionContext ITERCEPTION_API interception_create_context(void);
+InterceptionContext INTERCEPTION_API interception_create_context(void);
 
-void ITERCEPTION_API interception_destroy_context(InterceptionContext context);
+void INTERCEPTION_API interception_destroy_context(InterceptionContext context);
 
-InterceptionPrecedence ITERCEPTION_API interception_get_precedence(InterceptionContext context, InterceptionDevice device);
+InterceptionPrecedence INTERCEPTION_API interception_get_precedence(InterceptionContext context, InterceptionDevice device);
 
-void ITERCEPTION_API interception_set_precedence(InterceptionContext context, InterceptionDevice device, InterceptionPrecedence precedence);
+void INTERCEPTION_API interception_set_precedence(InterceptionContext context, InterceptionDevice device, InterceptionPrecedence precedence);
 
-InterceptionFilter ITERCEPTION_API interception_get_filter(InterceptionContext context, InterceptionDevice device);
+InterceptionFilter INTERCEPTION_API interception_get_filter(InterceptionContext context, InterceptionDevice device);
 
-void ITERCEPTION_API interception_set_filter(InterceptionContext context, InterceptionPredicate predicate, InterceptionFilter filter);
+void INTERCEPTION_API interception_set_filter(InterceptionContext context, InterceptionPredicate predicate, InterceptionFilter filter);
 
-InterceptionDevice ITERCEPTION_API interception_wait(InterceptionContext context);
+InterceptionDevice INTERCEPTION_API interception_wait(InterceptionContext context);
 
-InterceptionDevice ITERCEPTION_API interception_wait_with_timeout(InterceptionContext context, unsigned long milliseconds);
+InterceptionDevice INTERCEPTION_API interception_wait_with_timeout(InterceptionContext context, unsigned long milliseconds);
 
-int ITERCEPTION_API interception_send(InterceptionContext context, InterceptionDevice device, const InterceptionStroke *stroke, unsigned int nstroke);
+int INTERCEPTION_API interception_send(InterceptionContext context, InterceptionDevice device, const InterceptionStroke *stroke, unsigned int nstroke);
 
-int ITERCEPTION_API interception_receive(InterceptionContext context, InterceptionDevice device, InterceptionStroke *stroke, unsigned int nstroke);
+int INTERCEPTION_API interception_receive(InterceptionContext context, InterceptionDevice device, InterceptionStroke *stroke, unsigned int nstroke);
 
-unsigned int ITERCEPTION_API interception_get_hardware_id(InterceptionContext context, InterceptionDevice device, void *hardware_id_buffer, unsigned int buffer_size);
+unsigned int INTERCEPTION_API interception_get_hardware_id(InterceptionContext context, InterceptionDevice device, void *hardware_id_buffer, unsigned int buffer_size);
 
-int ITERCEPTION_API interception_is_invalid(InterceptionDevice device);
+int INTERCEPTION_API interception_is_invalid(InterceptionDevice device);
 
-int ITERCEPTION_API interception_is_keyboard(InterceptionDevice device);
+int INTERCEPTION_API interception_is_keyboard(InterceptionDevice device);
 
-int ITERCEPTION_API interception_is_mouse(InterceptionDevice device);
+int INTERCEPTION_API interception_is_mouse(InterceptionDevice device);
 
 #ifdef __cplusplus
 }
