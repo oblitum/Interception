@@ -323,3 +323,39 @@ int interception_is_mouse(InterceptionDevice device)
 {
     return device >= INTERCEPTION_MOUSE(0) && device <= INTERCEPTION_MOUSE(INTERCEPTION_MAX_MOUSE - 1);
 }
+
+int interception_enumerate_devices(InterceptionContext context, InterceptionDevice device_array[], int device_array_size, int device_type)
+{
+    int actual_devices = 0;
+    int hardware_id_length = 0;
+    wchar_t hardware_id[1024];
+    InterceptionDevice i;
+
+    if (device_array_size < 1) return 0;
+
+    for (i = 0; i < device_array_size && i < INTERCEPTION_MAX_DEVICE; ++i)
+    {
+        hardware_id_length = interception_get_hardware_id(context, i, (void*)hardware_id, sizeof(hardware_id));
+        if (hardware_id_length > 0 && hardware_id_length < sizeof(hardware_id))
+        {
+            if ((device_type & INTERCEPTION_DEVICE_KEYBOARD) && interception_is_keyboard(i)
+                || (device_type & INTERCEPTION_DEVICE_MOUSE) && interception_is_mouse(i))
+			{
+                device_array[actual_devices] = i;
+                ++actual_devices;
+            }
+        }
+    }
+
+    return actual_devices;
+}
+
+int interception_enumerate_keyboards(InterceptionContext context, InterceptionDevice device_array[], int device_array_size)
+{
+    return interception_enumerate_devices(context, device_array, device_array_size, INTERCEPTION_DEVICE_KEYBOARD);
+}
+
+int interception_enumerate_mouses(InterceptionContext context, InterceptionDevice device_array[], int device_array_size)
+{
+    return interception_enumerate_devices(context, device_array, device_array_size, INTERCEPTION_DEVICE_MOUSE);
+}

@@ -51,6 +51,12 @@ typedef unsigned short InterceptionFilter;
 
 typedef int (*InterceptionPredicate)(InterceptionDevice device);
 
+enum InterceptionDeviceType
+{
+    INTERCEPTION_DEVICE_KEYBOARD = 0x01,
+    INTERCEPTION_DEVICE_MOUSE    = 0x02
+};
+
 enum InterceptionKeyState
 {
     INTERCEPTION_KEY_DOWN             = 0x00,
@@ -186,6 +192,12 @@ int INTERCEPTION_API interception_is_invalid(InterceptionDevice device);
 int INTERCEPTION_API interception_is_keyboard(InterceptionDevice device);
 
 int INTERCEPTION_API interception_is_mouse(InterceptionDevice device);
+
+int INTERCEPTION_API interception_enumerate_devices(InterceptionContext context, InterceptionDevice device_array[], int device_array_size, int device_type);
+
+int INTERCEPTION_API interception_enumerate_keyboards(InterceptionContext context, InterceptionDevice device_array[], int device_array_size);
+
+int INTERCEPTION_API interception_enumerate_mouses(InterceptionContext context, InterceptionDevice device_array[], int device_array_size);
 
 #ifdef __cplusplus
 }
