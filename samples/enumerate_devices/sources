@@ -1,0 +1,12 @@
+TARGETNAME=enumerate_device
+TARGETTYPE=PROGRAM
+USE_NATIVE_EH=1
+USE_MSVCRT=1
+USE_RTTI=1
+USE_STL=1
+386_STDCALL=0
+UMTYPE=console
+
+INCLUDES=..\..\include;$(INCLUDES)
+TARGETLIBS=..\..\bin\x86\Debug\interception.lib
+SOURCES=main.cpp 

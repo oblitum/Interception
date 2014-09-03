@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <interception.h>
+#include "interception.h"
 
 
-int main()
+int main(int argc, char* argv[])
 {
 	InterceptionContext context;
 	InterceptionDevice devices[INTERCEPTION_MAX_DEVICE];
@@ -10,7 +10,7 @@ int main()
 
 	context = interception_create_context();
 	actual_devices_count = interception_enumerate_devices(context, devices, INTERCEPTION_MAX_DEVICE, INTERCEPTION_DEVICE_KEYBOARD | INTERCEPTION_DEVICE_MOUSE);
-	printf("number of devices:  %d\n", actual_devices_count);
+	printf("number of devices:   %d\n", actual_devices_count);
 	for (int i = 0; i < actual_devices_count; ++i) {
 		printf("%d\n", devices[i]);
 	}
@@ -29,6 +29,8 @@ int main()
 		printf("%d\n", devices[i]);
 	}
 	printf("\n");
+	
+	interception_destroy_context(context);
 
 	return 0;
 }
