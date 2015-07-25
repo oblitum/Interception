@@ -45,6 +45,8 @@ For commercial purposes it adopts two other licenses which can be checked in the
  - [Interception License][interception-license]:  
  Provides access to all source code, including drivers and installers.
 
+Please contact me at <francisco@oblita.com> for acquiring a commercial license.
+
 Use cases
 ---------
 
