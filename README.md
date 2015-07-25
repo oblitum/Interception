@@ -59,7 +59,7 @@ first created it:
  solutions.
  - In game applications like BOTs and control customization.
  - To construct an emacs mode of the system.
- - To customize supermarket cashier's system.
+ - To customize supermarket cashier's systems.
 
 For fun:
 
