@@ -1,0 +1,13 @@
+TARGETNAME=identify
+TARGETTYPE=PROGRAM
+UMTYPE=console
+
+USE_NATIVE_EH=1
+USE_MSVCRT=1
+USE_RTTI=1
+USE_STL=1
+386_STDCALL=0
+
+INCLUDES=..;..\..\library
+TARGETLIBS=..\..\library\objfre_wxp_x86\i386\interception.lib
+SOURCES=..\utils.c identify.cpp
