@@ -77,5 +77,5 @@ For fun:
 [rose]: https://sites.google.com/a/oblita.com/yorick/_/rsrc/1237686585300/hooking-part3/rose.png
 [butterfly]: https://sites.google.com/a/oblita.com/yorick/_/rsrc/1237686591599/hooking-part3/butterfly.png
 [licenses]: https://github.com/oblitum/Interception/tree/master/licenses
-[interception-license]: https://github.com/oblitum/Interception/blob/master/licenses/commercial-usage/Interception.pdf
-[interception-api-license]: https://github.com/oblitum/Interception/blob/master/licenses/commercial-usage/Interception%20API.pdf
+[interception-license]: https://github.com/oblitum/Interception/raw/master/licenses/commercial-usage/Interception.pdf
+[interception-api-license]: https://github.com/oblitum/Interception/raw/master/licenses/commercial-usage/Interception%20API.pdf
