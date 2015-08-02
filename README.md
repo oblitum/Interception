@@ -12,7 +12,7 @@ Simple build scripts (`buildit.cmd`) are provided to build using specific build
 environments of the WDK, they require the environment variable `%WDK%` to be
 previously set to the WDK installation directory.
 
-- Tested from Windows XP to Windows 8.1.
+- Tested from Windows XP to Windows 10.
 
 Driver installation
 -------------------
