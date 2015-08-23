@@ -9,5 +9,5 @@ USE_STL=1
 386_STDCALL=0
 
 INCLUDES=..;..\..\library
-TARGETLIBS=..\..\library\objfre_wxp_x86\i386\interception.lib
+TARGETLIBS=$(SDK_LIB_PATH)\user32.lib ..\..\library\objfre_wxp_x86\i386\interception.lib
 SOURCES=..\utils.c identify.cpp
