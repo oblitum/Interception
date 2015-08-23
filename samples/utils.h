@@ -7,6 +7,10 @@ extern "C" {
 
 void raise_process_priority(void);
 void lower_process_priority(void);
+int get_screen_width(void);
+int get_screen_height(void);
+void busy_wait(unsigned long count);
+unsigned long calculate_busy_wait_millisecond(void);
 
 #ifdef __cplusplus
 }
