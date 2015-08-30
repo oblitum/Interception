@@ -1,0 +1,13 @@
+TARGETNAME=caps2esc
+TARGETTYPE=PROGRAM
+UMTYPE=windows
+
+USE_NATIVE_EH=1
+USE_MSVCRT=1
+USE_RTTI=1
+USE_STL=1
+386_STDCALL=0
+
+INCLUDES=..;..\..\library
+TARGETLIBS=$(SDK_LIB_PATH)\user32.lib ..\..\library\objfre_wxp_x86\i386\interception.lib
+SOURCES=..\utils.c caps2esc.cpp
