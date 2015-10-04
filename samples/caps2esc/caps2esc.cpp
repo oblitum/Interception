@@ -90,6 +90,11 @@ vector<InterceptionKeyStroke> caps2esc(const InterceptionKeyStroke &kstroke) {
 }
 
 int main() {
+    void *program_instance = try_open_single_program("407631B6-78D3-4EFC-A868-40BBB7204CF1");
+    if (!program_instance) {
+        return 0;
+    }
+
     InterceptionContext context;
     InterceptionDevice device;
     InterceptionKeyStroke kstroke;
@@ -115,5 +120,5 @@ int main() {
 
     interception_destroy_context(context);
 
-    return 0;
+    close_single_program(program_instance);
 }
