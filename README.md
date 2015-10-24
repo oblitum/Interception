@@ -62,6 +62,9 @@ first created it:
  - In game applications like BOTs and control customization.
  - To construct an emacs mode of the system.
  - To customize supermarket cashier's systems.
+ - In doctoral thesis about typing pattern recognition for security applications.
+ - Home theater automation.
+ - ...
 
 For fun:
 
