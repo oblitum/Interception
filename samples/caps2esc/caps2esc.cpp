@@ -59,7 +59,7 @@ vector<InterceptionKeyStroke> caps2esc(const InterceptionKeyStroke &kstroke) {
             capslock_is_down = false;
             return kstrokes;
         }
-        if (!esc_give_up) {
+        if (!esc_give_up && !(kstroke.state & INTERCEPTION_KEY_UP)) {
             esc_give_up = true;
             kstrokes.push_back(ctrl_down);
         }
