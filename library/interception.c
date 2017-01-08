@@ -58,8 +58,10 @@ InterceptionContext interception_create_context(void)
 
         device_array[i].handle = CreateFile(device_name, GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, NULL);
 
-        if (device_array[i].handle == INVALID_HANDLE_VALUE)
-            continue;
+        if (device_array[i].handle == INVALID_HANDLE_VALUE) {
+            interception_destroy_context(device_array);
+            return 0;
+        }
 
         device_array[i].unempty = CreateEvent(NULL, TRUE, FALSE, NULL);
 
