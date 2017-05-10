@@ -33,10 +33,13 @@ int main()
 
             if(keystroke.code == SCANCODE_ESC) break;
         }
-
-        if(interception_is_mouse(device))
+        else if(interception_is_mouse(device))
         {
             cout << "INTERCEPTION_MOUSE(" << device - INTERCEPTION_MOUSE(0) << ")" << endl;
+        }
+        else
+        {
+            cout << "UNRECOGNIZED(" << device << ")" << endl;
         }
 
         interception_send(context, device, &stroke, 1);
