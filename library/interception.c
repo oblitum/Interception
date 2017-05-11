@@ -56,14 +56,14 @@ InterceptionContext interception_create_context(void)
 
         sprintf(&device_name[sizeof(device_name) - 3], "%02d", i);
 
-        device_array[i].handle = CreateFile(device_name, GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, NULL);
+        device_array[i].handle = CreateFileA(device_name, GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, NULL);
 
         if (device_array[i].handle == INVALID_HANDLE_VALUE) {
             interception_destroy_context(device_array);
             return 0;
         }
 
-        device_array[i].unempty = CreateEvent(NULL, TRUE, FALSE, NULL);
+        device_array[i].unempty = CreateEventA(NULL, TRUE, FALSE, NULL);
 
         if(device_array[i].unempty == NULL)
         {
